@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="view_error_unexpected_message">Um erro ocorreu. Por favor, tente novamente.</string>
+</resources>

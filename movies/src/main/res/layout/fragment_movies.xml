@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewFlipper
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view_flipper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/view_movie_item"
+        tools:itemCount="4"
+        tools:spanCount="2"
+        tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+    <lucascampos.labs.core.widgets.UnexpectedErrorView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</ViewFlipper>

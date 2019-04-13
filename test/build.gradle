@@ -1,0 +1,8 @@
+apply plugin: 'com.android.library'
+apply from: '../share-config.gradle'
+
+dependencies {
+    implementation "androidx.appcompat:appcompat:$androidxVersion"
+
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+}
