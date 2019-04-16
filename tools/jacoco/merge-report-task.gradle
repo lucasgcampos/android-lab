@@ -1,0 +1,27 @@
+apply from: "$rootDir/tools/jacoco/jacoco-common.gradle"
+
+final testTasks = []
+final coverageClassDirs = []
+final coverageSourceDirs = []
+final modules = rootProject.subprojects.collect { it.project.name }.findAll { it != 'test' }.flatten()
+
+modules.each { module ->
+    testTasks.add("$module:jacocoReport")
+    coverageSourceDirs.add("$module/$mainSrc")
+    coverageClassDirs.add(fileTree(dir: "$module/$debugBuildFolder", excludes: fileFilter))
+}
+
+task mergeReports(type: JacocoReport, dependsOn: testTasks) {
+    def executionPaths = []
+
+    testTasks.each { executionPaths.add(tasks.getByPath(it).executionData) }
+    classDirectories = files(coverageClassDirs)
+    sourceDirectories = files(coverageSourceDirs)
+    executionData = files(executionPaths)
+
+    reports {
+        html.enabled = true
+        xml.enabled = false
+        csv.enabled = false
+    }
+}

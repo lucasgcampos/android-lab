@@ -1,0 +1,36 @@
+apply from: "$rootDir/tools/jacoco/jacoco-common.gradle"
+
+afterEvaluate {
+    android {
+        buildTypes {
+            debug {
+                testCoverageEnabled true
+            }
+        }
+        testOptions {
+            unitTests.all {
+                jacoco {
+                    includeNoLocationClasses = true
+                }
+            }
+        }
+    }
+}
+
+task jacocoReport(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {
+
+    reports {
+        html.enabled = true
+        xml.enabled = false
+        csv.enabled = false
+    }
+
+    final debugTree = fileTree(dir: "$debugBuildFolder", excludes: fileFilter)
+    classDirectories = files([debugTree])
+
+    sourceDirectories = files([mainSrc])
+    executionData = fileTree(dir: project.buildDir, includes: [
+            'jacoco/testDebugUnitTest.exec',
+            'outputs/**/*coverage.ec'
+    ])
+}

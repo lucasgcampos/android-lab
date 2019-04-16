@@ -1,0 +1,23 @@
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = '0.8.3'
+}
+
+ext {
+    mainSrc = 'src/main/kotlin'
+    debugBuildFolder = 'build/tmp/kotlin-classes/debug'
+    fileFilter = [
+            '**/R.class',
+            '**/R$*.class',
+            '**/*$ViewInjector*.*',
+            '**/*$ViewBinder*.*',
+            '**/BuildConfig.*',
+            '**/Manifest*.*',
+            '**/*$Lambda$*.*',
+            '**/*$inlined$*.*',
+            '**/*Test*.*',
+            '**/_$_*.*',
+            'android/**/*.*'
+    ]
+}

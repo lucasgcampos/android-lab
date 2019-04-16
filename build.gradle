@@ -39,8 +39,13 @@ allprojects {
     }
 }
 
+subprojects {
+    apply from: "$rootDir/tools/jacoco/jacoco-task.gradle"
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-apply from: "$rootProject.rootDir/tools/detekt/detekt-config.gradle"
+apply from: "$rootDir/tools/detekt/detekt-config.gradle"
+apply from: "$rootDir/tools/jacoco/merge-report-task.gradle"

@@ -12,6 +12,7 @@
 bin/
 gen/
 out/
+*.exec
 
 # Gradle files
 .gradle/

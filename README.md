@@ -4,7 +4,7 @@ This is a repository to do some experiments with android development.
 
 Goals:
 - [ ] CI / CD
-- [ ] Code coverage (JaCoCo)
+- [x] Code coverage (JaCoCo)
 - [x] Code style (Detekt)
 - [ ] Crashlytics 
 - [ ] Material theme
