@@ -12,6 +12,7 @@ Goals:
 - [ ] Tests with `activityScenario`
 - [ ] Navigation
 - [ ] Robolectric to test custom views
+- [x] Kotlin script
 
 ### Code style and more... (Detekt)
 
