@@ -1,11 +1,11 @@
 private object Versions {
-    const val gradleVersion = "3.4.0"
-    const val kotlinVersion = "1.3.21"
-    const val androidxVersion = "1.1.0-alpha04"
+    const val gradleVersion = "4.0.0"
+    const val kotlinVersion = "1.3.70"
+    const val androidxVersion = "1.1.0"
     const val constraintLayoutVersion = "1.1.3"
-    const val retrofitVersion = "2.5.0"
-    const val navigationVersion = "2.1.0-alpha02"
-    const val glideVersion = "4.9.0"
+    const val retrofitVersion = "2.9.0"
+    const val navigationVersion = "2.3.0"
+    const val glideVersion = "4.11.0"
 }
 
 object ClassPath {

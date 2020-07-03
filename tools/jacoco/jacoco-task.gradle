@@ -26,11 +26,11 @@ task jacocoReport(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDe
     }
 
     final debugTree = fileTree(dir: "$debugBuildFolder", excludes: fileFilter)
-    classDirectories = files([debugTree])
+    classDirectories.setFrom(files([debugTree]))
 
-    sourceDirectories = files([mainSrc])
-    executionData = fileTree(dir: project.buildDir, includes: [
+    sourceDirectories.setFrom(files([mainSrc]))
+    executionData.setFrom(fileTree(dir: project.buildDir, includes: [
             'jacoco/testDebugUnitTest.exec',
             'outputs/**/*coverage.ec'
-    ])
+    ]))
 }

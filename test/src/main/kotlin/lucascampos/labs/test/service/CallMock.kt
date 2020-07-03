@@ -1,6 +1,7 @@
 package lucascampos.labs.test.service
 
 import okhttp3.Request
+import okio.Timeout
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -42,4 +43,7 @@ class CallMock<T> private constructor(private val response: T? = null, private v
         return Response.success(response)
     }
 
+    override fun timeout(): Timeout {
+        return Timeout()
+    }
 }

@@ -15,9 +15,10 @@ task mergeReports(type: JacocoReport, dependsOn: testTasks) {
     def executionPaths = []
 
     testTasks.each { executionPaths.add(tasks.getByPath(it).executionData) }
-    classDirectories = files(coverageClassDirs)
-    sourceDirectories = files(coverageSourceDirs)
-    executionData = files(executionPaths)
+
+    classDirectories.setFrom(files(coverageClassDirs))
+    sourceDirectories.setFrom(files(coverageSourceDirs))
+    executionData.setFrom(files(executionPaths))
 
     reports {
         html.enabled = true
