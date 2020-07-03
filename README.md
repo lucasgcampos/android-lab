@@ -13,6 +13,9 @@ Goals:
 - [x] [Kotlin script](#kotlin-script)
 - [ ] Tests with `activityScenario`
 - [x] [Robolectric](#robolectric)
+- [ ] Navigation
+- [ ] Robolectric to test custom views
+- [x] Kotlin script
 
 ### Code style and more... (Detekt)
 
