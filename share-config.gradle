@@ -4,11 +4,11 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
@@ -52,9 +52,9 @@ ext {
     mockitoVersion = '2.27.0'
     robolectricVersion = '4.2'
     testCoreVersion = '1.1.0'
-    coreTestingVersion = '2.1.0-alpha01'
-    runnerVersion = '1.2.0-alpha03'
-    espressoVersion = '3.2.0-alpha03'
+    coreTestingVersion = '2.1.0'
+    runnerVersion = '1.2.0'
+    espressoVersion = '3.2.0'
 }
 
 dependencies {

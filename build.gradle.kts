@@ -26,7 +26,7 @@ subprojects {
     apply(from = "$rootDir/tools/jacoco/jacoco-task.gradle")
 }
 
-tasks.register("clean",Delete::class){
+tasks.register("clean",Delete::class) {
     delete(rootProject.buildDir)
 }
 
