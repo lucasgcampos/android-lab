@@ -32,11 +32,9 @@ class MoviesFragment : Fragment() {
     }
 
     private fun setUpViewModel() {
-        val lifecycleOwner = this
-
         viewModel.run {
-            movies.observe(lifecycleOwner) { setUpRecyclerView(it.results, margin = 16) }
-            viewState.observe(lifecycleOwner) { viewFlipper?.displayedChild = it.index }
+            movies.observe(viewLifecycleOwner) { setUpRecyclerView(it.results, margin = 16) }
+            viewState.observe(viewLifecycleOwner) { viewFlipper?.displayedChild = it.index }
 
             fetchMovies()
         }
